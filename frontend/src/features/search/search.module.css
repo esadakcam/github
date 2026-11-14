@@ -1,0 +1,381 @@
+.home {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+}
+.homeSearch {
+  width: min(100%, 49rem);
+  transform: translateY(-2rem);
+}
+.form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 0.5rem;
+  gap: 0.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+.form:focus-within {
+  border-color: var(--accent);
+  box-shadow:
+    0 0 0 3px var(--highlight),
+    var(--shadow);
+}
+.searchField {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  min-width: 0;
+  padding-left: 0.625rem;
+  color: var(--subtle);
+}
+.searchField input {
+  width: 100%;
+  min-width: 3rem;
+  background: none;
+  border: 0;
+  outline: 0;
+  padding: 0.65rem 0;
+  color: var(--text);
+  font-size: 13px;
+}
+.searchField input:focus-visible {
+  outline: 0;
+}
+.searchField input::placeholder {
+  color: var(--subtle);
+}
+.form select {
+  max-width: 10rem;
+  background: transparent;
+  color: var(--muted);
+  border: 0;
+  border-left: 1px solid var(--border);
+  border-radius: 0;
+  font-size: 12px;
+  padding: 0.5rem 0.6rem;
+}
+.form button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--accent-solid);
+  color: var(--accent-text);
+  border: 0;
+  border-radius: 6px;
+  padding: 0.65rem 0.9rem;
+  font-size: 12px;
+  font-weight: 600;
+}
+.form button svg {
+  width: 14px;
+}
+.hint {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1rem 0.25rem 0;
+  color: var(--subtle);
+  font-size: 11px;
+}
+.hint code {
+  font-size: 11px;
+  color: var(--muted);
+}
+.hint > :last-child {
+  white-space: nowrap;
+}
+.results {
+  max-width: 66rem;
+  padding: 2.5rem 2rem 4rem;
+  margin: auto;
+}
+.resultsHeader {
+  margin: 2.5rem 0 1.25rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--subtle);
+  margin-bottom: 0.5rem;
+}
+.resultsHeader h1 {
+  font-size: 1.625rem;
+  letter-spacing: -0.045em;
+  font-weight: 600;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.resultsHeader p {
+  margin: 0.5rem 0 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+.resultsToolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1.25rem;
+}
+.typeTabs {
+  display: flex;
+  gap: 1.5rem;
+  overflow: auto;
+}
+.typeTabs a {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: nowrap;
+  color: var(--muted);
+  padding: 0.75rem 0;
+  border-bottom: 2px solid transparent;
+  font-size: 12px;
+}
+.typeTabs a:hover {
+  text-decoration: none;
+  color: var(--text);
+}
+.typeTabs a[aria-current] {
+  border-color: var(--accent);
+  color: var(--text);
+}
+.typeTabs svg {
+  width: 14px;
+  height: 14px;
+}
+.sort {
+  font-size: 11px;
+  padding: 0.35rem 0.5rem;
+  border-radius: 5px;
+  background: transparent;
+  max-width: 8rem;
+}
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+.card {
+  display: grid;
+  grid-template-columns: 2.5rem minmax(0, 1fr);
+  gap: 1rem;
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--surface);
+}
+.card:hover {
+  border-color: var(--subtle);
+}
+.cardIcon {
+  display: grid;
+  place-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-raised);
+  color: var(--muted);
+}
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.name {
+  font-size: 14px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+  letter-spacing: -0.015em;
+}
+.nameOwner {
+  font-weight: 400;
+  color: var(--muted);
+}
+.starCount {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 11px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.starCount svg {
+  width: 13px;
+  height: 13px;
+}
+.card p {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.65;
+  margin: 0.5rem 0 0.8rem;
+  max-width: 48rem;
+}
+.metadata {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--subtle);
+  font-size: 11px;
+}
+.metadata > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.metadata svg {
+  width: 12px;
+  height: 12px;
+}
+.languageDot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+.topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.8rem;
+}
+.topics:empty {
+  display: none;
+}
+.topics a {
+  font-size: 10px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  background: var(--surface-raised);
+  color: var(--muted);
+  padding: 0.15rem 0.45rem;
+}
+.topics a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  text-decoration: none;
+}
+.avatar {
+  font:
+    500 15px ui-monospace,
+    monospace;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.cardAction {
+  font-size: 11px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.cardAction svg {
+  width: 13px;
+}
+.scope {
+  font-size: 11px;
+  color: var(--subtle);
+  margin: 1.25rem 0 0;
+}
+.empty {
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  background: var(--surface);
+}
+.empty > svg {
+  color: var(--subtle);
+  width: 28px;
+  height: 28px;
+  margin-bottom: 1rem;
+}
+.empty h2 {
+  font-size: 16px;
+  margin-bottom: 0.5rem;
+}
+.empty p {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0;
+}
+@media (max-width: 650px) {
+  .home {
+    padding: 1rem;
+  }
+  .form {
+    flex-wrap: wrap;
+  }
+  .searchField {
+    flex-basis: 100%;
+    padding: 0.25rem 0.5rem;
+  }
+  .form select {
+    flex: 1;
+    max-width: none;
+    border: 0;
+  }
+  .form button {
+    margin-left: auto;
+  }
+  .hint > :last-child {
+    display: none;
+  }
+  .results {
+    padding: 1.5rem 1rem 3rem;
+  }
+  .resultsHeader {
+    margin-top: 2rem;
+  }
+  .resultsToolbar {
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  .typeTabs {
+    width: 100%;
+    gap: 1.25rem;
+  }
+  .sort {
+    margin: 0.5rem 0 0.75rem auto;
+  }
+  .card {
+    grid-template-columns: 1.875rem minmax(0, 1fr);
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+  .cardIcon {
+    width: 1.875rem;
+    height: 1.875rem;
+    border-radius: 6px;
+  }
+  .name {
+    font-size: 13px;
+  }
+  .cardTop {
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .resultsHeader h1 {
+    font-size: 1.4rem;
+  }
+}
